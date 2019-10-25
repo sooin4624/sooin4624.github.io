@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>웹연습08</title>
+    <style>
+    *{margin: 0; padding: 0;}
+    body, html{width: 100%; -ms-overflow-style:none; }
+    ::-webkit-scrollbar {display: none;}  
+    ul{list-style: none;}
+    a{text-decoration:none;}
+    #hd {position: fixed; top: 0;left: 0; z-index: 99; width: 100px; height: 100px; background:rgba(255, 255, 255, 0.7);}
+    #ft {clear: both; width: 100%; height: 120px; background: #333; color: #fff;}
+    .hd_wrap, .ft_wrap {width: 1280px; margin: 0 auto;}
+    #tnb {float:right;}
+    #tnb li {float: left; padding: 14px;}
+    #tnb li a{color: #333; font-weight: 900;}
+    #tnb li a:hover {color: #19e;}
+    #gnb {clear: both; float:right; width: 800px;}
+    #gnb li{float: left; width: 200px; }
+    #gnb li a{color: #333; display: block; font-size: 14px; line-height: 36px; padding-left: 24px; }
+    #gnb li a.dep1 {font-weight: 800; background: gold; line-height:50px }
+    #gnb li .sub {display: none; }
+
+    #gnb li:hover .sub {display: block;}
+    /* #gnb:hover li .sub {display: block; height: 192px; background: beige;} */
+
+    #gnb li .sub li {clear: both;}
+    #gnb li .sub li a{background: beige;}
+    .logo{float: right; display: block; width: 120px;height: 50px; margin-right: 80px;}
+    .breadcrumb{width: 100%; height: auto; position: relative;}
+    #vs {width: 100%; padding-top: 100px;}
+    #vs img{display: block; width: 100%; height: auto;}
+    .loc {width: 1280px; height: 42px; background: #333; color: #fff; 
+    border-left: 1px solid #fff; border-right: 1px solid #fff;
+    position: absolute; bottom: 0; z-index: 22;
+    /* left: 50%; margin-left: -640px; */ left:calc(50% - 640px) ;}
+    .loc li{float: left; height: 42px;}
+    .loc li a{ display:block; line-height: 42px; padding: 0px 20px; color: #fff;}
+    .loc details {display: block; line-height: 42px; width: 120px; cursor: pointer;}
+    .loc details p {background: #333; }
+    #content{clear: both; width: 100%;}
+    .page{clear: both; position: relative; width: 100vw; height: 100vh; overflow: hidden; display: none;}
+    .page:target {display:block;}
+    .page_tit {padding-left: calc(calc(100% - 1280px) / 2); line-height: 6; padding-top: 100px;}
+    .blank{clear: both; width: 100%; min-height: 500px;}
+    #fnb {clear: both; width: 100%; height: 42px;  border-top: 1px solid #555; border-bottom: 1px solid #111;}
+    #fnb li {float: left; }
+    #fnb li a { display: block; border-left: 1px solid #555; border-right: 1px solid #111; line-height: 42px; min-width: 100px; text-align: center; color: #fff;}
+    .copyright {clear: both; line-height: 40px;}
+
+    </style>
+</head>
+<body>
+    <!-- header#hd>div.hd_wrap>(nav#tnb>ul.menu>li*3>a{상단메뉴$}) -->
+    <header id="hd">
+        <div class="hd_wrap">
+            <nav id="tnb">
+                <ul class="menu">
+                    <li><a href="">로그인</a></li>
+                    <li><a href="">회원가입</a></li>
+                    <li><a href="">마이페이지</a></li>
+                </ul>
+            </nav>
+            <!-- nav#gnb>ul.menu>li*4>a.dep1{메뉴$}+(ul.sub>li*5>a{서브$}) -->
+            <nav id="gnb">
+                <ul class="menu">
+                    <li>
+                        <a href="sub1.html" class="dep1">아우터</a>
+                        <ul class="sub">
+                            <li><a href="sub1.html#page1">코트</a></li>
+                            <li><a href="sub1.html#page2">자켓</a></li>
+                            <li><a href="sub1.html#page3">패딩/점퍼</a></li>
+                            <li><a href="sub1.html#page4">가디건</a></li>
+                            <li><a href="sub1.html#page5">조끼</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="sub2.html" class="dep1">상의</a>
+                        <ul class="sub">
+                            <li><a href="sub2.html#page1">티셔츠</a></li>
+                            <li><a href="sub2.html#page2">후드&맨투맨</a></li>
+                            <li><a href="sub2.html#page3">니트</a></li>
+                            <li><a href="sub2.html#page4">블라우스</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="sub3.html" class="dep1">하의</a>
+                        <ul class="sub">
+                            <li><a href="sub3.html#page1">데님</a></li>
+                            <li><a href="sub3.html#page2">팬츠</a></li>
+                            <li><a href="sub3.html#page3">숏팬츠</a></li>
+                            <li><a href="sub3.html#page4">스커트</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="sub4.html" class="dep1">원피스</a>
+                        <ul class="sub">
+                            <li><a href="sub4.html#page1">미니</a></li>
+                            <li><a href="sub4.html#page2">롱</a></li>
+                        </ul>
+                    </li>
+                        </ul>
+            </nav>
+            <a href="" class="logo"><img src="/%EA%B9%8C%EA%BF%8D%EC%9D%B4.jpg" alt="로고" ></a>
+        </div>
+    </header>
+    <!-- div.breadcrumb>ul>li.seq$*3>a -->
+    <div class="breadcrumb">
+        <!-- figure#vs>img[src="https://placehold.it/1280*30"] -->
+        <figure id="vs"><img src="https://placehold.it/1280x320/333" alt="서브페이지 배너"></figure>
+        <ul class="loc">
+            <li class="seq1"><a href="index.html">HOME</a></li>
+            <li class="seq2"><a href="sub1.html">메뉴1</a></li>
+            <li class="seq3">
+                <!-- details[open=open]>summary{메뉴1} -->
+                <details>
+                    <summary>메뉴1</summary>
+                    <!-- p>a*5 -->
+                    <p>
+                        <a href="#page1">서브1</a>
+                        <a href="#page2">서브2</a>
+                        <a href="#page3">서브3</a>
+                        <a href="#page4">서브4</a>
+                        <a href="#page5">서브5</a>
+                    </p>
+                </details>
+        </ul>
+    </div>
+    <!-- main#content>div.page#page$*5>h2.page_tit{페이지$} -->
+    <main id="content">
+        <div class="page" id="page1">
+            <h2 class="page_tit">페이지1</h2>
+        </div>
+        <div class="page" id="page2">
+            <h2 class="page_tit">페이지2</h2>
+        </div>
+        <div class="page" id="page3">
+            <h2 class="page_tit">페이지3</h2>
+        </div>
+        <div class="page" id="page4">
+            <h2 class="page_tit">페이지4</h2>
+        </div>
+        <div class="page" id="page5">
+            <h2 class="page_tit">페이지5</h2>
+        </div>
+    </main>
+    <div class="blank"></div>
+    <!-- footer#ft>div.ft_wrap>nav#fnb>ul>li*4>a{푸터링크$} -->
+    <footer id="ft">
+        <div class="ft_wrap">
+            <nav id="fnb">
+                <ul>
+                    <li><a href="">푸터링크1</a></li>
+                    <li><a href="">푸터링크2</a></li>
+                    <li><a href="">푸터링크3</a></li>
+                    <li><a href="">푸터링크4</a></li>
+                </ul>
+            </nav>
+            <p class="copyright">여기는 카피라이트 요소입니다.</p>
+        </div>
+    </footer>
+</body>
+</html>
